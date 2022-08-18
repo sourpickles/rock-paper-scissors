@@ -12,9 +12,14 @@ function getComputerChoice() {
   }
 }
 
+function getPlayerChoice() {
+  var playerChoice = prompt("Rock, Paper, or Scissors: ").toLowerCase();
+  return playerChoice;
+}
+
 function play(computerSelection, playerSelection) {
-  console.log("Player choice: " + playerSelection);
-  console.log("Computer choice: " + computerSelection);
+  console.log("Player choice: " + getPlayerChoice());
+  console.log("Computer choice: " + getComputerChoice());
   if (playerSelection == computerSelection) {
     return "It's a tie";
   } else if (playerSelection == "paper" && computerSelection == "rock" || playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "scissors" && computerSelection == "paper") {
@@ -28,7 +33,7 @@ function game() {
   //plays for five rounds total. starts counting at 0
   for (rounds = 0; rounds < 5; rounds++) {
     const computerSelection = getComputerChoice();
-    let playerSelection = prompt("Rock, Paper, or Scissors: ").toLowerCase();
+    const playerSelection = getPlayerChoice();
     console.log(play(playerSelection, computerSelection));
   }
 }
