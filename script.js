@@ -78,16 +78,16 @@ function updateScoreLine() {
   if (playerScore == 1) {
     makePlayerScoreLine1();
   } else if (playerScore == 2) {
-    makeComputerScoreLine2();
+    makePlayerScoreLine2();
   } else if (playerScore == 3) {
-    makeComputerScoreLine3();
+    makePlayerScoreLine3();
   } 
   if (computerScore == 1) {
     makeComputerScoreLine1();
   } else if (computerScore == 2) {
     makeComputerScoreLine2();
   } else if (computerScore == 3) {
-    makePlayerScoreLine1();
+    makeComputerScoreLine3();
   }
 }
 
