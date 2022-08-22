@@ -3,6 +3,17 @@
     padding: 0;
 }
 
+/* General layout */
+#gameBox {
+    display: flex;
+}
+
+.gameBoxChild {
+    flex: 1;   
+}
+
+
+/* Score line */
 .scoreLine0 {
     padding: 10px;
     width: 2%;
