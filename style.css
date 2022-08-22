@@ -4,11 +4,11 @@
 }
 
 /* General layout */
-#gameBox {
+#gameLog {
     display: flex;
 }
 
-.gameBoxChild {
+.gameLogChild {
     flex: 1;   
 }
 
