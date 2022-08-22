@@ -22,8 +22,10 @@ function getComputerChoice () {
 function play(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
     showWinner.textContent = "Its a tie!";
-    displayPlayerChoice.textContent = "Player Chose " + playerSelection;
-    displayComputerChoice.textContent = "Computer Chose " + computerSelection;
+    displayPlayerChoice.textContent = "Player chose " + playerSelection;
+    displayComputerChoice.textContent = "Computer chose " + computerSelection;
+    displayPlayerScore.textContent = "Player's Score: " + playerScore;
+    displayComputerScore.textContent = "Computer's Score: " + computerScore;
     console.log("Its a tie " + computerScore + " " + playerScore);
     return "Its a tie!";
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
@@ -31,8 +33,10 @@ function play(playerSelection, computerSelection) {
       playerSelection == "paper" && computerSelection == "rock") {
       playerScore++;
       showWinner.textContent = "Player wins this round!";
-      displayPlayerChoice.textContent = "Player Chose " + playerSelection;
-      displayComputerChoice.textContent = "Computer Chose " + computerSelection;
+      displayPlayerChoice.textContent = "Player chose " + playerSelection;
+      displayComputerChoice.textContent = "Computer chose " + computerSelection;
+      displayPlayerScore.textContent = "Player's Score: " + playerScore;
+      displayComputerScore.textContent = "Computer's Score: " + computerScore;
       console.log("Player wins " + computerScore + " " + playerScore);
       return "Player wins!";
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
@@ -40,8 +44,10 @@ function play(playerSelection, computerSelection) {
       computerSelection == "paper" && playerSelection == "rock") {
       computerScore++;
       showWinner.textContent = "Computer wins this round!";
-      displayPlayerChoice.textContent = "Player Chose " + playerSelection;
-      displayComputerChoice.textContent = "Computer Chose " + computerSelection;
+      displayPlayerChoice.textContent = "Player chose " + playerSelection;
+      displayComputerChoice.textContent = "Computer chose " + computerSelection;
+      displayPlayerScore.textContent = "Player's Score: " + playerScore;
+      displayComputerScore.textContent = "Computer's Score: " + computerScore;
       console.log("Computer wins " + computerScore + " " + playerScore);
       return "Computer wins!";
   }
