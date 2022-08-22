@@ -26,7 +26,6 @@ function play(playerSelection, computerSelection) {
     displayComputerChoice.textContent = "Computer chose " + computerSelection;
     displayPlayerScore.textContent = "Player's Score: " + playerScore;
     displayComputerScore.textContent = "Computer's Score: " + computerScore;
-    console.log("Its a tie " + computerScore + " " + playerScore);
     return "Its a tie!";
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
       playerSelection == "scissors" && computerSelection == "paper" ||
@@ -37,7 +36,6 @@ function play(playerSelection, computerSelection) {
       displayComputerChoice.textContent = "Computer chose " + computerSelection;
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
-      console.log("Player wins " + computerScore + " " + playerScore);
       return "Player wins!";
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
       computerSelection == "scissors" && playerSelection == "paper" ||
@@ -48,7 +46,6 @@ function play(playerSelection, computerSelection) {
       displayComputerChoice.textContent = "Computer chose " + computerSelection;
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
-      console.log("Computer wins " + computerScore + " " + playerScore);
       return "Computer wins!";
   }
 }
@@ -61,14 +58,8 @@ function game() {
         play(button1.value, computerSelection)
       }
       if (playerScore === 3) {
-        console.log("You won");
-        console.log("Player Score: " + playerScore);
-        console.log("Computer Score: " + computerScore);
         showWinner.textContent = "Congrats, Player wins!";
       } else if (computerScore === 3) {
-          console.log("You lost");
-          console.log("Player Score: " + playerScore);
-          console.log("Computer Score: " + computerScore);
           showWinner.textContent = "Computer wins, better luck next time!";
       }
       if (playerScore === 3 || computerScore === 3) {
