@@ -1,6 +1,5 @@
 var playerScore = 0;
 var computerScore = 0;
-var rounds = 0;
 
 var buttons = document.querySelectorAll("#btn");
 var displayPlayerChoice = document.querySelector("#displayPlayerChoice");
@@ -8,15 +7,6 @@ var displayComputerChoice = document.querySelector("#displayComputerChoice");
 var showWinner = document.querySelector("#showWinner");
 var displayPlayerScore = document.querySelector("#displayPlayerScore");
 var displayComputerScore = document.querySelector("#displayComputerScore");
-
-var roundLog = document.querySelector("#roundLog");
-
-function updateGameLog() {
-  var logInfo = document.createElement("div");
-  logInfo.classList.add("logInfo");
-  logInfo.textContent = "Score: " + playerScore;
-  roundLog.appendChild(logInfo);
-}
 
 function getComputerChoice() {
   var randNum = Math.floor(Math.random() * 3);
@@ -38,7 +28,6 @@ function play(playerSelection, computerSelection) {
     displayPlayerScore.textContent = "Player's Score: " + playerScore;
     displayComputerScore.textContent = "Computer's Score: " + computerScore;
     updateScoreLine();
-    updateGameLog();
     return "Tie";
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
       playerSelection == "scissors" && computerSelection == "paper" ||
@@ -51,7 +40,6 @@ function play(playerSelection, computerSelection) {
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
       updateScoreLine();
-      updateGameLog();
       return "Player";
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
       computerSelection == "scissors" && playerSelection == "paper" ||
@@ -64,7 +52,6 @@ function play(playerSelection, computerSelection) {
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
       updateScoreLine();
-      updateGameLog();
       return "Computer";
   }
 }
@@ -138,5 +125,6 @@ function makeComputerScoreLine3() {
   document.getElementById('computerScoreLine').classList.remove('scoreLine2');
   document.getElementById('computerScoreLine').classList.add('scoreLine3');
 }
+
 
 game()
