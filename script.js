@@ -1,3 +1,6 @@
+var playerScore = 0;
+var computerScore = 0;
+
 function getComputerChoice () {
   var randNum = Math.floor(Math.random() * 3);
   if (randNum == 0) {
@@ -11,15 +14,20 @@ function getComputerChoice () {
 
 function play(computerSelection, playerSelection) {
   if (playerSelection === computerSelection) {
+    console.log("Its a tie " + computerScore + " " + playerScore);
     return "Its a tie!";
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
       playerSelection == "scissors" && computerSelection == "paper" ||
       playerSelection == "paper" && computerSelection == "rock") {
-    return "Player wins!";
+      playerScore++;
+      console.log("Player wins " + computerScore + " " + playerScore);
+      return "Player wins!";
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
       computerSelection == "scissors" && playerSelection == "paper" ||
       computerSelection == "paper" && playerSelection == "rock") {
-    return "Computer wins!";
+      computerScore++;
+      console.log("Computer wins " + computerScore + " " + playerScore);
+      return "Computer wins!";
   }
 }
 
