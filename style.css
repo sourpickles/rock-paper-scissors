@@ -4,13 +4,7 @@
 }
 
 /* General layout */
-#gameLog {
-    display: flex;
-}
 
-.gameLogChild {
-    flex: 1;   
-}
 
 
 /* Score line */
