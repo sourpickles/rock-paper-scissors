@@ -9,6 +9,15 @@ var showWinner = document.querySelector("#showWinner");
 var displayPlayerScore = document.querySelector("#displayPlayerScore");
 var displayComputerScore = document.querySelector("#displayComputerScore");
 
+var roundLog = document.querySelector("#roundLog");
+
+function updateGameLog() {
+  var logInfo = document.createElement("div");
+  logInfo.classList.add("logInfo");
+  logInfo.textContent = "Score: " + playerScore;
+  roundLog.appendChild(logInfo);
+}
+
 function getComputerChoice() {
   var randNum = Math.floor(Math.random() * 3);
   if (randNum == 0) {
@@ -22,14 +31,14 @@ function getComputerChoice() {
 
 function play(playerSelection, computerSelection) {
   if (playerSelection === computerSelection) {
-    rounds++;
+    rounds++; 
     showWinner.textContent = "Its a tie!";
     displayPlayerChoice.textContent = "Player chose " + playerSelection;
     displayComputerChoice.textContent = "Computer chose " + computerSelection;
     displayPlayerScore.textContent = "Player's Score: " + playerScore;
     displayComputerScore.textContent = "Computer's Score: " + computerScore;
     updateScoreLine();
-    updateGameBox;
+    updateGameLog();
     return "Tie";
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
       playerSelection == "scissors" && computerSelection == "paper" ||
@@ -42,7 +51,7 @@ function play(playerSelection, computerSelection) {
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
       updateScoreLine();
-      updateGameBox;
+      updateGameLog();
       return "Player";
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
       computerSelection == "scissors" && playerSelection == "paper" ||
@@ -55,7 +64,7 @@ function play(playerSelection, computerSelection) {
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
       updateScoreLine();
-      updateGameBox;
+      updateGameLog();
       return "Computer";
   }
 }
@@ -128,13 +137,6 @@ function makeComputerScoreLine2() {
 function makeComputerScoreLine3() {
   document.getElementById('computerScoreLine').classList.remove('scoreLine2');
   document.getElementById('computerScoreLine').classList.add('scoreLine3');
-}
-
-function updateGameBox() {
-  var roundBox = document.querySelector("#roundBox");
-  var logText = document.createElement("div");
-  logtext.textContent = `Round ${rounds}\nPlayer Choice: ${playerSelection}\nComputer Choice: ${computerSelection}\nScore: ${playerScore}:${computerScore}`;
-  roundBox.appendChild(logText);
 }
 
 game()
