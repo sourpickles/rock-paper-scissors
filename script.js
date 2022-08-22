@@ -8,7 +8,7 @@ var showWinner = document.querySelector("#showWinner");
 var displayPlayerScore = document.querySelector("#displayPlayerScore");
 var displayComputerScore = document.querySelector("#displayComputerScore");
 
-function getComputerChoice () {
+function getComputerChoice() {
   var randNum = Math.floor(Math.random() * 3);
   if (randNum == 0) {
     return "rock";
@@ -26,7 +26,8 @@ function play(playerSelection, computerSelection) {
     displayComputerChoice.textContent = "Computer chose " + computerSelection;
     displayPlayerScore.textContent = "Player's Score: " + playerScore;
     displayComputerScore.textContent = "Computer's Score: " + computerScore;
-    return "Its a tie!";
+    updateScoreLine();
+    return "Tie";
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
       playerSelection == "scissors" && computerSelection == "paper" ||
       playerSelection == "paper" && computerSelection == "rock") {
@@ -36,7 +37,8 @@ function play(playerSelection, computerSelection) {
       displayComputerChoice.textContent = "Computer chose " + computerSelection;
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
-      return "Player wins!";
+      updateScoreLine();
+      return "Player";
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
       computerSelection == "scissors" && playerSelection == "paper" ||
       computerSelection == "paper" && playerSelection == "rock") {
@@ -46,7 +48,8 @@ function play(playerSelection, computerSelection) {
       displayComputerChoice.textContent = "Computer chose " + computerSelection;
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
-      return "Computer wins!";
+      updateScoreLine();
+      return "Computer";
   }
 }
 
@@ -69,6 +72,55 @@ function game() {
       }
     })
   }) 
+}
+
+function updateScoreLine() {
+  if (playerScore == 1) {
+    makePlayerScoreLine1();
+  } else if (playerScore == 2) {
+    makeComputerScoreLine2();
+  } else if (playerScore == 3) {
+    makeComputerScoreLine3();
+  } 
+  if (computerScore == 1) {
+    makeComputerScoreLine1();
+  } else if (computerScore == 2) {
+    makeComputerScoreLine2();
+  } else if (computerScore == 3) {
+    makePlayerScoreLine1();
+  }
+}
+
+//score line player
+function makePlayerScoreLine1() {
+  document.getElementById('playerScoreLine').classList.remove('scoreLine0');
+  document.getElementById('playerScoreLine').classList.add('scoreLine1');
+}
+
+function makePlayerScoreLine2() {
+  document.getElementById('playerScoreLine').classList.remove('scoreLine1');
+  document.getElementById('playerScoreLine').classList.add('scoreLine2');
+}
+
+function makePlayerScoreLine3() {
+  document.getElementById('playerScoreLine').classList.remove('scoreLine2');
+  document.getElementById('playerScoreLine').classList.add('scoreLine3');
+}
+
+//score line computer
+function makeComputerScoreLine1() {
+  document.getElementById('computerScoreLine').classList.remove('scoreLine0');
+  document.getElementById('computerScoreLine').classList.add('scoreLine1');
+}
+
+function makeComputerScoreLine2() {
+  document.getElementById('computerScoreLine').classList.remove('scoreLine1');
+  document.getElementById('computerScoreLine').classList.add('scoreLine2');
+}
+
+function makeComputerScoreLine3() {
+  document.getElementById('computerScoreLine').classList.remove('scoreLine2');
+  document.getElementById('computerScoreLine').classList.add('scoreLine3');
 }
 
 game()
