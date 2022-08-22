@@ -1,5 +1,6 @@
 var playerScore = 0;
 var computerScore = 0;
+var buttons = document.querySelectorAll("#btn");
 
 function getComputerChoice () {
   var randNum = Math.floor(Math.random() * 3);
@@ -32,17 +33,28 @@ function play(computerSelection, playerSelection) {
 }
 
 function game() {
-  var playerSelection = "";
-  var computerSelection = "";
-  //plays for five rounds total. starts counting at 0
-  for (rounds = 0; rounds < 5; rounds++) {
-    play(playerSelection, computerSelection);
-    var playerSelection = prompt("Rock, Paper, or Scissors: ").toLowerCase();
-    var computerSelection = getComputerChoice();
-    console.log("Player picks " + playerSelection);
-    console.log("Computer picks " + computerSelection);
-    console.log(play(playerSelection, computerSelection));
-  }
+  buttons.forEach((button1) => {
+    button1.addEventListener("click", () => {
+      var computerSelection = getComputerChoice();
+      if (button1.id === "btn") {
+        play(button1.value, computerSelection)
+      }
+      if (playerScore === 3) {
+        console.log("You won");
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + computerScore);
+      } else if (computerScore === 3) {
+          console.log("You lost");
+          console.log("Player Score: " + playerScore);
+          console.log("Computer Score: " + computerScore);
+      }
+      if (playerScore === 3 || computerScore === 3) {
+        buttons.forEach((button) => {
+          button.removeAttribute("id")          
+        })
+      }
+    })
+  }) 
 }
 
 game()
