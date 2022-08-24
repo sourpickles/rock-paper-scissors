@@ -154,17 +154,6 @@ p {
     cursor: pointer;
 }
 
-a {
-    display: block;
-    width: 150px;
-    position: relative;
-    margin: auto;
-    text-align: center;
-    background-color: #293973;
-    color: #c1d4e6;
-    padding: 5px 0px;
-}
-
 .is-blurred {
     filter: blur(2px);
     -webkit-filter: blur(2px);
