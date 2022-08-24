@@ -27,7 +27,6 @@ function play(playerSelection, computerSelection) {
     displayPlayerScore.textContent = "Player's Score: " + playerScore;
     displayComputerScore.textContent = "Computer's Score: " + computerScore;
     updateScoreLine();
-    
   } else if (playerSelection == "rock" && computerSelection == "scissors" ||
       playerSelection == "scissors" && computerSelection == "paper" ||
       playerSelection == "paper" && computerSelection == "rock") {
@@ -38,7 +37,6 @@ function play(playerSelection, computerSelection) {
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
       updateScoreLine();
-      
   } else if (computerSelection == "rock" && playerSelection == "scissors" ||
       computerSelection == "scissors" && playerSelection == "paper" ||
       computerSelection == "paper" && playerSelection == "rock") {
@@ -49,7 +47,6 @@ function play(playerSelection, computerSelection) {
       displayPlayerScore.textContent = "Player's Score: " + playerScore;
       displayComputerScore.textContent = "Computer's Score: " + computerScore;
       updateScoreLine();
-      
   }
 }
 
@@ -122,6 +119,20 @@ function makeComputerScoreLine3() {
   document.getElementById('computerScoreLine').classList.remove('scoreLine2');
   document.getElementById('computerScoreLine').classList.add('scoreLine3');
 }
+
+//popup
+window.addEventListener("load", function() {
+  setTimeout (
+    function open(event) {
+      document.querySelector(".popup").style.display = "block";
+    },
+  )
+});
+
+document.querySelector("#close").addEventListener("click", function() {
+  document.getElementById('main').classList.remove("is-blurred");
+  document.querySelector(".popup").style.display = "none";
+});
 
 
 game()
