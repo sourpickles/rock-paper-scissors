@@ -1,33 +1,171 @@
+/* colors:
+dark blue #151D3B
+blue #293973
+bright red #D82148
+green #6EBF8B
+light blue #c1d4e6
+*/
+
 * {
     margin: 0;
     padding: 0;
 }
 
-/* General layout */
+img {
+    height: 150px;
+    width: 150px;
+}
 
+/* General layout */
+body {
+    text-align: center;
+    background-color: #293973;
+}
+
+h1 {
+    font-size: 70px;
+    padding-top: 30px;
+    font-family: 'Orbitron', sans-serif;
+    color: #c1d4e6;
+}
+
+h2 {
+    font-size: 40px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    color: #c1d4e6;
+}
+
+h3 {
+    font-size: 22px;
+    padding-bottom: 10px;
+    color: #c1d4e6;
+
+}
+
+h4 {
+    padding-bottom: 10px;
+    font-size: 30px;
+}
+
+p {
+    color: #c1d4e6;
+    margin-bottom: 10px;
+}
+
+.gameBox {
+    border-style: solid;
+    margin: 40px 250px 20px 250px;
+    padding: 20px 10px 20px 10px;
+    height: 470px;
+    overflow: hidden;
+    background-color: #151D3B;
+    font-family: 'Roboto Mono', monospace;
+    z-index: 2;
+}
+
+#displayChoices {
+    display: flex;
+}
+
+.choice {
+    flex: 1;
+}
 
 
 /* Score line */
 .scoreLine0 {
     padding: 10px;
     width: 2%;
-    background-color: antiquewhite;
 }
 
 .scoreLine1 {
     padding: 10px;
     width: 30%;
-    background-color: antiquewhite;
 }
 
 .scoreLine2 {
     padding: 10px;
     width: 60%;
-    background-color: antiquewhite;
 }
 
 .scoreLine3 {
     padding: 10px;
-    width: 100%;
+    width: 97.5%;
     background-color: antiquewhite;
+    box-shadow: 0 0 5px 3px #fff,  
+    0 0 8px 7px rgb(243, 243, 154), 
+    0 0 10px 8px #c1d4e6;;
 }
+
+#playerScoreLine {
+    background-color: #D82148;
+    border-radius: 0.125cm;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+  
+#computerScoreLine {
+    background-color: #6EBF8B;
+    border-radius: 0.125cm;
+    margin-bottom: 20px;
+}
+
+#displayScores {
+    text-align: left;
+}
+
+.buttons {
+    margin: 20px 10px 10px 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #293973;
+}
+
+/* popup */
+.popup {
+    background-color: #c1d4e6;
+    width: 500px;
+    padding: 30px 50px 30px 50px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    font-family: 'Roboto Mono', monospace;
+    color: #151D3B;
+    border-style: solid;
+    border-width: 5px;
+    border-color: #151D3B;
+    display: none;
+    z-index: 1;
+}
+
+#popupText {
+    color: #151D3B;
+}
+
+.popup button {
+    display: block;
+    margin: 0px 0px 10px auto;
+    background-color: transparent;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+a {
+    display: block;
+    width: 150px;
+    position: relative;
+    margin: auto;
+    text-align: center;
+    background-color: #293973;
+    color: #c1d4e6;
+    padding: 5px 0px;
+}
+
+.is-blurred {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+  }
