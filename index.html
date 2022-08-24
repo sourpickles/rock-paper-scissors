@@ -6,18 +6,39 @@
   <meta name="viewport" content="width=device-width">
   <title>Rock Paper Scissors</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-
+  <!--font-->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+  </style>
 </head>
 
 <body>
+  
+  <div class="popup">
+    <button id="close">&times;</button>
+    <h4 id="popupText">Welcome to Rock, Paper, Scissors!</h4>
+    <p id="popupText">Before you start the game, lets go over some simple rules:</p>
+    <ul>
+      <li>You will be playing against a your computer. That means good luck trying to predict its choice.
+      </li>
+      <li>There are three buttons at the bottom of the screen. These are youre options listed in order of rock, paper, and scissors.</li>
+      <li>The score will be tracked on screen. Whoever reaches 3 wins first wins the game.</li>
+      <li>If after your first game you would like to replay, please hit the refresh button on your computer.</li>
+    </ul>
+    <br>
+    <p id="popupText">Thats all! Click the X to play the game, good luck!</p>
+  </div>
 
-    <div>
+    <div id="main" class="is-blurred">
       <h1>Rock, Paper, Scissors</h1>
-      <div> 
+      <div class="gameBox"> 
         <!--shows what was chosen-->
-        <div>
-          <h3 id="displayPlayerChoice">Player's Choice</h3>
-          <h3 id="displayComputerChoice">Computer's Choice</h3>
+        <div id="displayChoices">
+          <h3 id="displayPlayerChoice" class="choice">Player's Choice</h3>
+          <h3 id="displayComputerChoice" class="choice">Computer's Choice</h3>
         </div>
 
         <!--shows winner per round and at end-->
@@ -26,7 +47,7 @@
         </div>
 
         <!--scores-->
-        <div>
+        <div id="displayScores">
           <!--your score-->
           <div>
             <p id="displayPlayerScore">Player's Score:</p>
@@ -41,9 +62,15 @@
 
         <!--options-->
         <div>
-          <button id="btn" value="rock">Rock</button>
-          <button id="btn" value="paper">Paper</button>
-          <button id="btn" value="scissors">Scissors</button>
+          <button id="btn" class="buttons" value="rock">
+            <img src="images/rock2.png">
+          </button>
+          <button id="btn" class="buttons" value="paper">
+            <img src="images/paper3.png">
+          </button>
+          <button id="btn" class="buttons" value="scissors">
+            <img src="images/scissors2.png">
+          </button>
         </div>
 
       </div>
